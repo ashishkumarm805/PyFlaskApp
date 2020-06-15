@@ -1,5 +1,7 @@
 from deposite import deposite
 from withdraw import withdraw
+from update import update
+from delete import delete 
 class coustomerDetails:
     def __init__(self,id,account,account_type,balance,address,age):
         self.id=id
@@ -31,3 +33,16 @@ if __name__ =='__main__':
     value=int(input())
     newBalance=withdraw(coustomer_db,value)
     print (newBalance)
+    print("enter value to be updated")
+    new_name=input()
+    new_address=input()
+    new_values=update(coustomer_db,new_name,new_address)
+    for i in coustomer_db:
+        print(i.account)
+        print(i.address)
+    print("enter the id to be deleted")
+    value=int(input())
+    c=delete(coustomer_db,value)
+    for i in coustomer_db:
+        print(i.id)
+    
